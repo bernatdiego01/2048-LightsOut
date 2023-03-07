@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="tile_2">#EDE0CA</color>
+    <color name="tile_4">#ECD7B0</color>
+    <color name="tile_8">#E6C482</color>
+    <color name="tile_16">#E4A771</color>
+    <color name="tile_32">#F57963</color>
+    <color name="tile_64">#EC5F46</color>
+    <color name="tile_128">#EA591F</color>
+    <color name="tile_256">#E82B2B</color>
+    <color name="tile_512">#E82B77</color>
+    <color name="tile_1024">#E82B9C</color>
+    <color name="tile_2048">#B62BE8</color>
+    <color name="tile_max">#8B09E8</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="tile_0">#F1E3D7</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

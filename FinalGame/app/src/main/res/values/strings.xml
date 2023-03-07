@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FinalGame</string>
+    <string name="titulo_2048">2048</string>
+    <string name="puntuacio_2048">0</string>
+    <string name="titulo_lights">Lights Out</string>
+    <string name="nivell">0</string>
+</resources>

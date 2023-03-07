@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/wallpaper">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/TituloMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="2048 Lights"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:shadowColor="@color/purple_500"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="5"
+            android:textSize="60dp"
+            android:paddingBottom="30dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/start2048"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2048"
+                android:textSize="40dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:paddingTop="40dp"/>
+            <TextView
+                android:id="@+id/Lights_Out_Start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lights Out"
+                android:textSize="40dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:paddingTop="40dp"/>
+            <TextView
+                android:id="@+id/Clasificacio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Clasificacio"
+                android:textSize="40dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:paddingTop="40dp"/>
+
+
+
+
+
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/usuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0"
+            android:textColor="#80FFFFFF"
+            android:text="Usuario:  "
+            android:textAlignment="center"
+            android:textSize="40dp"
+            android:background="@drawable/translucent"
+
+
+            />
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
