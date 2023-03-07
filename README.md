@@ -71,7 +71,7 @@ Finally the "displaydata" method retrieves the data from the database using the 
   
   
   
-###DB Helper
+### DB Helper
   
   The class DbHelper is used only with the Class Classificacio in order to set and retrive the names and points of the players stored inside the database.The class starts defining constants for the database name, database version, table name, column names, and the SQL statement to create the table. The table has two columns, "Nombre" and "Puntuacion".
 
@@ -87,7 +87,7 @@ The "getdata" method returns a Cursor object that contains all the rows in the "
 
 Overall, this class provides methods to create and manage a SQLite database for the "CLASSIFICACIO" table, and provides methods to insert data into and retrieve data from the table.
   
-###LIGHTS OUT
+### LIGHTS OUT
   
   This other class respresents the famouse game "LightsOut". The game consists of a grid of lights, where each light is either "on" or "off". Clicking a light toggles its state and also the state of its neighbors. The goal is to turn off all the lights.
 
@@ -109,6 +109,9 @@ The cambiarBombilla method toggles the state of a button and changes its backgro
 
 Finally, there is an activarBombilles method that returns a random Drawable object representing a lit or unlit light bulb. This method is used to initialize the state of each button when the grid is created.
   
+  
+  ![cap4](https://user-images.githubusercontent.com/91748429/223406125-0dcbfa52-26c3-461e-853e-f627ec7d4f26.PNG)
+
 
 
 
