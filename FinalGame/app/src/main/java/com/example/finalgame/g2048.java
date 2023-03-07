@@ -28,9 +28,9 @@ public class g2048 extends AppCompatActivity {
         SwipeListener swipeListener;
         int puntuacio;
         TextView punts;
+        String nom;
         int aaaa=0;
-        Intent intento = getIntent();
-        String nom = intento.getStringExtra("nom");
+
 
 
 
@@ -42,6 +42,8 @@ public class g2048 extends AppCompatActivity {
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
+            Intent intento = getIntent();
+            nom = intento.getStringExtra("nom");
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_2048);
             puntuacio=0;
@@ -350,9 +352,6 @@ public class g2048 extends AppCompatActivity {
         }
 
     public void moverAbajo() {
-            if(aaaa==4){
-                GameOver();
-            }
             canMove();
         updateAnterior(values);
         for (int i = 0; i < values.length; i++) {
