@@ -18,7 +18,12 @@ Each TextView is set up with a "OnClickListener" that listens for user clicks an
 
 ### 2048
 
+
+
 ![cap2](https://user-images.githubusercontent.com/91748429/223401153-903c9a74-e542-4554-b555-6e52538f3af8.PNG)
+
+
+
 
 
 Once the player clicks on the "dosmil" textview, de player is transportet into the g2048.class and there he can play the knowned game 2048. The class g2048 is very complicated and difficult to understand, even for the one creating it. Either way, I'll try to explain it.
@@ -27,7 +32,13 @@ The code starts with defining various variables including "SIZE" , "tiles" , "va
 
 The "onCreate" method also initializes and sets click listeners to four buttons with IDs "cuatroporcuatro", "sispersis", "ochoporocho", and "enrera". Each of these buttons has a corresponding "OnClickListener" that sets the "SIZE" variable to either 4, 6, or 8 and calls the "crear" method. The "crear" method initializes the "tiles", "values", and "anterior" variables as 2D arrays with the appropriate size. It then adds TextView objects to a GridLayout object named "gridLayout" and initializes their text and layout properties. Two random tiles are added to the game board using the "addRandomTile" method and the "updateUI" method is called to update the display.
 
+
+
+
 ![cap1](https://user-images.githubusercontent.com/91748429/223400897-e8cd50b9-fea3-4a33-8c7b-a1b9e980307e.PNG)
+
+
+
 
 The "SwipeListener" class implements the "OnTouchListener" interface and uses an instance of the "GestureDetector" class to detect swipe gestures on the game board. If a swipe is detected, the "moverDerecha", "moverIzquierda", "moverAbajo", or "moverArriba" method is called to move the tiles in the appropriate direction.
 
@@ -56,7 +67,12 @@ Once the player loses in the 2048 game, it's score and name will be sent to this
 
 ### Classification
 
+
+
+
 ![cap3](https://user-images.githubusercontent.com/91748429/223402381-90298e0a-432d-47f3-96da-4b6c7701caaf.PNG)
+
+
 
 
 The class Classification shows the players and its scores in a reclycle view. The class has instance variables "nom" and "punts", which are both of type "ArrayList<String>". There is also an instance of "DBHelper" class named "dbHelper". An instance of "TextAdapter" class named "adapter" is also defined.
@@ -110,10 +126,16 @@ The cambiarBombilla method toggles the state of a button and changes its backgro
 Finally, there is an activarBombilles method that returns a random Drawable object representing a lit or unlit light bulb. This method is used to initialize the state of each button when the grid is created.
   
   
+  
+  
   ![cap4](https://user-images.githubusercontent.com/91748429/223406125-0dcbfa52-26c3-461e-853e-f627ec7d4f26.PNG)
 
 
 
 
+
+  
+  
+  
 
 
