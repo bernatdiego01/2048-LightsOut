@@ -51,44 +51,52 @@ public class g2048 extends AppCompatActivity {
             SwipeListener e = new SwipeListener(findViewById(R.id.activity_main));
 
             Button cuatro=findViewById(R.id.cuatroporcuatro);
-            Button seis=findViewById(R.id.sispersis);
-            Button ocho=findViewById(R.id.ochoporocho);
+            Button tres=findViewById(R.id.trespertres);
+            Button cinco=findViewById(R.id.cincpercinc);
             Button enrera=findViewById(R.id.enrera);
+            Button novap=findViewById(R.id.NouJoc);
+            enrera.setEnabled(false);
+            novap.setEnabled(false);
 
-
-
-            ocho.setOnClickListener(new OnClickListener() {
+            enrera.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    SIZE=8;
-                    crear();
-                    cuatro.setEnabled(false);
-                    ocho.setEnabled(false);
-                    seis.setEnabled(false);
-                    enrera.setOnClickListener(new OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            possarAnteriorUI();
-                        }
-                    });
+                    possarAnteriorUI();
                 }
             });
 
-            seis.setOnClickListener(new OnClickListener() {
+            novap.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    SIZE=6;
+                    crear();
+                }
+            });
+
+
+
+            tres.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    SIZE=3;
                     crear();
                     cuatro.setEnabled(false);
-                    ocho.setEnabled(false);
-                    seis.setEnabled(false);
-                    enrera.setOnClickListener(new OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            possarAnteriorUI();
+                    cinco.setEnabled(false);
+                    tres.setEnabled(false);
+                    enrera.setEnabled(true);
+                    novap.setEnabled(true);
+                }
+            });
 
-                        }
-                    });
+            cinco.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    SIZE=5;
+                    crear();
+                    cuatro.setEnabled(false);
+                    tres.setEnabled(false);
+                    cinco.setEnabled(false);
+                    enrera.setEnabled(true);
+                    novap.setEnabled(true);
                 }
             });
             cuatro.setOnClickListener(new OnClickListener() {
@@ -97,15 +105,10 @@ public class g2048 extends AppCompatActivity {
                     SIZE=4;
                     crear();
                     cuatro.setEnabled(false);
-                    ocho.setEnabled(false);
-                    seis.setEnabled(false);
-                    enrera.setOnClickListener(new OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            possarAnteriorUI();
-
-                        }
-                    });
+                    cinco.setEnabled(false);
+                    tres.setEnabled(false);
+                    enrera.setEnabled(true);
+                    novap.setEnabled(true);
                 }
             });
 
@@ -124,15 +127,14 @@ public class g2048 extends AppCompatActivity {
                     values[row][col] = 0;
                     anterior[row][col]=0;
                     GridLayout.LayoutParams params = new GridLayout.LayoutParams();
+                    params.setMargins(3,3,3,3);
                     tile.setBackgroundColor(getColor(R.color.tile_0));
                     tile.setTextColor(Color.parseColor("#776E65"));
                     tile.setTextSize(30);
+                    tile.setBackgroundResource(R.drawable.border);
                     tile.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-
                     tile.setGravity(View.TEXT_ALIGNMENT_CENTER);
-
                     params.rowSpec = GridLayout.spec(row, 1f);
-
                     params.columnSpec = GridLayout.spec(col, 1f);
                     params.height=(int) getResources().getDimension(R.dimen.heighBlock);
                     params.width=(int) getResources().getDimension(R.dimen.widthBlock);
@@ -146,6 +148,8 @@ public class g2048 extends AppCompatActivity {
             addRandomTile();
             addRandomTile();
             updateUI();
+            puntuacio=0;
+            setpuntuacio();
 
         }
 

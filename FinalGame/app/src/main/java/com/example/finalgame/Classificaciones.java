@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -38,6 +40,16 @@ public class Classificaciones extends AppCompatActivity {
         rcV.setAdapter(adapter);
         rcV.setLayoutManager(new LinearLayoutManager(this));
         displaydata();
+
+        Button inici= findViewById(R.id.inici);
+        inici.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(this, MainActivity.class);
+
+                startActivity(intent);
+            }
+        });
 
     }
 

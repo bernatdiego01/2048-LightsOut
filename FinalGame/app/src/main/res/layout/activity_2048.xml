@@ -39,16 +39,16 @@
             android:layout_gravity=""
             >
             <Button
-                android:id="@+id/sispersis"
-                android:text="6 x 6"
+                android:id="@+id/trespertres"
+                android:text="3 x 3"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="25dp"
                 android:layout_column="0"
                 android:textAlignment="center"
                 />
             <Button
-                android:id="@+id/ochoporocho"
-                android:text="8 x 8"
+                android:id="@+id/cincpercinc"
+                android:text="5 x 5"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="25dp"
                 android:layout_column="2"
@@ -64,21 +64,32 @@
                 />
         </GridLayout>
 
-        <LinearLayout
+        <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-
+            android:columnCount="2"
+            android:layout_gravity=""
             >
 
             <Button
                 android:id="@+id/enrera"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Retry"
+                android:text="Retornar"
+                android:layout_column="1"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="40dp"
+            />
+            <Button
+                android:id="@+id/NouJoc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nova Partida"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
+                android:layout_column="0"
                 />
-        </LinearLayout>
+        </GridLayout>
 
 
         <LinearLayout
@@ -94,7 +105,6 @@
             android:layout_marginRight="40dp"
             android:layout_marginTop="100dp"
             android:layout_marginBottom="100dp"
-            android:background="@drawable/border"
 
 
             android:rowCount="8"
@@ -103,6 +113,15 @@
 
         </GridLayout>
         </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Puntuacio:"
+            android:gravity="center"
+            android:textColor="@color/white"
+            />
+
         <TextView
             android:id="@+id/contador"
             android:layout_width="match_parent"

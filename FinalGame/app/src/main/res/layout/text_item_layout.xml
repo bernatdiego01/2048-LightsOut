@@ -23,6 +23,17 @@
             android:textSize="16sp"
             android:textColor="@android:color/white" />
 
+        <Button
+            android:id="@+id/inici"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0"
+            android:textSize="20sp"
+            android:text="0"
+            android:gravity="center"
+            />
+
 </LinearLayout>
 
 
