@@ -21,15 +21,19 @@ public class Classificaciones extends AppCompatActivity {
         setContentView(R.layout.activity_db);
         SQLiteDatabase db =dbHelper.getWritableDatabase();
         Intent intent = getIntent();
-        String puntos = intent.getStringExtra("puntuacio");
-        String nombre= intent.getStringExtra("nombre");
-        nom=new ArrayList<>();
-        punts= new ArrayList<>();
-        adapter=new TextAdapter(nom, punts);
-        Boolean checkinsertdata = dbHelper.insertdatas(nombre, puntos);
-        if(checkinsertdata){
-            System.out.print("si");
+        if(intent.hasExtra("puntuacio")){
+            String puntos = intent.getStringExtra("puntuacio");
+            String nombre= intent.getStringExtra("nombre");
+            nom=new ArrayList<>();
+            punts= new ArrayList<>();
+            adapter=new TextAdapter(nom, punts);
+            Boolean checkinsertdata = dbHelper.insertdatas(nombre, puntos);
+            if(checkinsertdata){
+                System.out.print("si");
+            }
+
         }
+
         RecyclerView rcV= findViewById(R.id.recycler_view);
         rcV.setAdapter(adapter);
         rcV.setLayoutManager(new LinearLayoutManager(this));
