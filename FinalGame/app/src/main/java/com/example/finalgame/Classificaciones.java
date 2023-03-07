@@ -27,6 +27,9 @@ public class Classificaciones extends AppCompatActivity {
         punts= new ArrayList<>();
         adapter=new TextAdapter(nom, punts);
         Boolean checkinsertdata = dbHelper.insertdatas(nombre, puntos);
+        if(checkinsertdata){
+            System.out.print("si");
+        }
         RecyclerView rcV= findViewById(R.id.recycler_view);
         rcV.setAdapter(adapter);
         rcV.setLayoutManager(new LinearLayoutManager(this));

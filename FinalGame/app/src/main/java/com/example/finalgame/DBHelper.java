@@ -40,8 +40,8 @@ public class DBHelper extends SQLiteOpenHelper {
     public boolean insertdatas(String nom, String punts){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues= new  ContentValues();
-        contentValues.put("Jugador", nom);
-        contentValues.put("Punts", punts);
+        contentValues.put("Nombre", nom);
+        contentValues.put("Puntuacion", punts);
         long result =db.insert("CLASSIFICACIO", null, contentValues );
         if (result==-1){
             return false;
