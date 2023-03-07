@@ -43,5 +43,6 @@ public class GameOver2048 extends AppCompatActivity {
         Intent intent2 = new Intent(this, Classificaciones.class);
         intent2.putExtra("puntuacio", puntos);
         intent2.putExtra("nombre", nom);
+        startActivity(intent2);
     }
 }
