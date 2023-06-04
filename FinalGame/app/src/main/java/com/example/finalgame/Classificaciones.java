@@ -14,9 +14,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class Classificaciones extends AppCompatActivity {
-    ArrayList<String> nom, punts;
+    ArrayList<String> nom= new ArrayList<>();
+    ArrayList<String> punts= new ArrayList<>();
     DBHelper dbHelper =new DBHelper(Classificaciones.this);
-    TextAdapter adapter;
+    TextAdapter adapter=new TextAdapter(nom, punts);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,30 +27,26 @@ public class Classificaciones extends AppCompatActivity {
         if(intent.hasExtra("puntuacio")){
             String puntos = intent.getStringExtra("puntuacio");
             String nombre= intent.getStringExtra("nombre");
-            nom=new ArrayList<>();
-            punts= new ArrayList<>();
-            adapter=new TextAdapter(nom, punts);
             Boolean checkinsertdata = dbHelper.insertdatas(nombre, puntos);
             if(checkinsertdata){
                 System.out.print("si");
             }
 
         }
+        Button inici = findViewById(R.id.inici);
+
+        inici.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                enviarAinici();
+
+            }
+        });
 
         RecyclerView rcV= findViewById(R.id.recycler_view);
         rcV.setAdapter(adapter);
         rcV.setLayoutManager(new LinearLayoutManager(this));
         displaydata();
-
-        Button inici= findViewById(R.id.inici);
-        inici.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(this, MainActivity.class);
-
-                startActivity(intent);
-            }
-        });
 
     }
 
@@ -61,6 +58,11 @@ public class Classificaciones extends AppCompatActivity {
             punts.add(cursor.getString(1));
         }
 
+    }
+
+    public void enviarAinici(){
+        Intent intent=new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
 

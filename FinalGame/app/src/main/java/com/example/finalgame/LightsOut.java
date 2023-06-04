@@ -12,12 +12,16 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.sql.Array;
 import java.util.Random;
 
 public class LightsOut extends AppCompatActivity {
 
-    int SIZE=6;
-    private int[][] matriu = new int[SIZE][SIZE];
+    int SIZE;
+    private int[][] solucio;
+    private int[][] segona;
+    private int[][] matriu;
+
     private int filaM=0;
     private int columnaM=0;
     int count;
@@ -44,7 +48,7 @@ public class LightsOut extends AppCompatActivity {
             public void onClick(View v) {
                 SIZE=5;
                 create();
-
+                cinc.setEnabled(false);
                 seis.setEnabled(false);
                 cuatro.setEnabled(false);
             }
@@ -56,7 +60,7 @@ public class LightsOut extends AppCompatActivity {
                 SIZE=6;
                 create();
                 cinc.setEnabled(false);
-
+                seis.setEnabled(false);
                 cuatro.setEnabled(false);
             }
         });
@@ -66,6 +70,7 @@ public class LightsOut extends AppCompatActivity {
                 SIZE=4;
                 create();
                 cinc.setEnabled(false);
+                cuatro.setEnabled(false);
                 seis.setEnabled(false);
 
             }
@@ -78,6 +83,9 @@ public class LightsOut extends AppCompatActivity {
         count=0;
         columnaM=0;
         filaM=0;
+        segona= new int[SIZE][SIZE];
+        matriu= new int[SIZE][SIZE];
+        solucio=new int[SIZE][SIZE];
         GridLayout gridLayout = findViewById(R.id.grid_layout);
         for (int row = 0; row < SIZE; row++) {
             for (int column = 0; column < SIZE; column++) {
@@ -120,13 +128,12 @@ public class LightsOut extends AppCompatActivity {
         // Cambia las imágenes de los botones vecinos
         cambiarBombilla(row, column);
         if (row > 0) {
-            // Cambia la imagen del botón encima
             ImageButton aboveButton = buttons[row - 1][column];
             if (aboveButton != null) {
                 cambiarBombilla(row-1, column);
             }
         }
-        if (row < 5) {
+        if (row < SIZE) {
             // Cambia la imagen del botón debajo
             ImageButton belowButton = buttons[row + 1][column];
             if (belowButton != null) {
@@ -140,7 +147,7 @@ public class LightsOut extends AppCompatActivity {
                 cambiarBombilla(row, column-1);;
             }
         }
-        if (column < 5) {
+        if (column < SIZE) {
             // Cambia la imagen del botón a la derecha
             ImageButton rightButton = buttons[row][column + 1];
             if (rightButton != null) {
