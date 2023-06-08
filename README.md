@@ -15,12 +15,14 @@ This code defines an Android activity named "MainActivity" that extends the "App
 
 Each TextView is set up with a "OnClickListener" that listens for user clicks and performs a specific action when clicked. When the "dosmil" TextView is clicked, the "set2048" method is called with the "usuari" EditText object as a parameter. Similarly, when the "lights" TextView is clicked, the "setLights" method is called with the "usuari" EditText object as a parameter. When the "clasi" TextView is clicked, the "setClasi" method is called.
 
+![imagen](https://github.com/bernatdiego01/2048-LightsOut/assets/91748429/ca979d0f-9d3f-42cb-90e4-f4d7befea85f)
 
 ### 2048
 
 
 
-![cap2](https://user-images.githubusercontent.com/91748429/223401153-903c9a74-e542-4554-b555-6e52538f3af8.PNG)
+
+![2048 1](https://github.com/bernatdiego01/2048-LightsOut/assets/91748429/93572daa-4897-4ae4-8655-9863ea1efd86)
 
 
 
@@ -30,12 +32,13 @@ Once the player clicks on the "dosmil" textview, de player is transportet into t
 
 The code starts with defining various variables including "SIZE" , "tiles" , "values", "anterior", "swipeListener", "puntuacio" , "punts", and "intento". The "g2048" class also has a boolean variable named "gameOver" and a default constructor with no parameters. The class overrides the "onCreate" method and sets the content view to a layout file named "activity_2048". It also initializes the "puntuacio" variable to 0 and sets the "punts" variable to a TextView object with an ID of "contador". An instance of the "SwipeListener" class is created with the view object passed as a parameter.
 
-The "onCreate" method also initializes and sets click listeners to four buttons with IDs "cuatroporcuatro", "sispersis", "ochoporocho", and "enrera". Each of these buttons has a corresponding "OnClickListener" that sets the "SIZE" variable to either 4, 6, or 8 and calls the "crear" method. The "crear" method initializes the "tiles", "values", and "anterior" variables as 2D arrays with the appropriate size. It then adds TextView objects to a GridLayout object named "gridLayout" and initializes their text and layout properties. Two random tiles are added to the game board using the "addRandomTile" method and the "updateUI" method is called to update the display.
+The "onCreate" method also initializes and sets click listeners to four buttons with IDs "cuatroporcuatro", "tresportres", "cincoporcinco", and "enrera". Each of these buttons has a corresponding "OnClickListener" that sets the "SIZE" variable to either 3, 4, or 5 and calls the "crear" method. The "crear" method initializes the "tiles", "values", and "anterior" variables as 2D arrays with the appropriate size. It then adds TextView objects to a GridLayout object named "gridLayout" and initializes their text and layout properties. Two random tiles are added to the game board using the "addRandomTile" method and the "updateUI" method is called to update the display.
 
 
 
 
-![cap1](https://user-images.githubusercontent.com/91748429/223400897-e8cd50b9-fea3-4a33-8c7b-a1b9e980307e.PNG)
+![2048 2](https://github.com/bernatdiego01/2048-LightsOut/assets/91748429/88e29c0c-ce63-44bd-84e0-2c8897725a72)
+
 
 
 
@@ -70,7 +73,8 @@ Once the player loses in the 2048 game, it's score and name will be sent to this
 
 
 
-![cap3](https://user-images.githubusercontent.com/91748429/223402381-90298e0a-432d-47f3-96da-4b6c7701caaf.PNG)
+![clasificacio](https://github.com/bernatdiego01/2048-LightsOut/assets/91748429/b7189738-7c77-4d61-916c-77d0ef5b02f1)
+
 
 
 
@@ -107,30 +111,31 @@ Overall, this class provides methods to create and manage a SQLite database for 
   
   This other class respresents the famouse game "LightsOut". The game consists of a grid of lights, where each light is either "on" or "off". Clicking a light toggles its state and also the state of its neighbors. The goal is to turn off all the lights.
 
-The class extends AppCompatActivity and has several instance variables, including an integer constant SIZE, a 2D integer array called "matriu" that stores the state of each button, and two integer variables called "filaM" and "columnaM" that keep track of the current row and column of the button being clicked. There is also an integer variable called "count" that keeps track of the number of times the game has been won and a TextView called "contador" to display the count.
+The instance variables in the class include a Button variable named "mButton_Solucion," an integer variable named "contador," two 2D arrays of TextViews named "lucesArray" and "solucion," two 2D arrays of integers named "arrayRandom" and "arrayContador," and several Button variables named "mButtonNewGame" and "mButtonBack." There is also a String variable named "nom."
 
-The class has an ImageButton 2D array called "buttons" that represents the buttons on the screen. There is also a GridLayout 2D array called "gridM" which is not used in the code.
+The onCreate method is overridden to set the layout of the activity and initialize various views and variables. The "lucesArray" 2D array is populated with TextView objects corresponding to buttons in the layout. Random numbers are generated and stored in the "arrayRandom" 2D array. The createTableroJuego method is called to set up the game board based on the generated random numbers.
 
-In the onCreate method, the layout is set to activity_lightsout.xml and several buttons are initialized. Each button has an OnClickListener that sets the value of the SIZE constant and calls the create method to create a new grid of buttons.
+There are several other methods in the class:
 
-The create method creates a new GridLayout and a grid of buttons by iterating over each row and column of the grid and creating a new ImageButton for each cell. Each button is given a random initial state by calling the activarBombilles method, and an OnClickListener that calls the instrucciones method when the button is clicked. The ImageButton objects are stored in the "buttons" array.
+    1. The colorInicial method sets the background color of a TextView based on its text value.
+    2. The colorSolucion method sets the background color of a TextView to represent the solution.
+    3. The canviarColor method changes the text value and background color of a TextView based on its current state.
+    4. The clicks method is called when a button is clicked. It toggles the state of the clicked button and its neighbors by calling the canviarColor method. It also checks if all the buttons have been turned off and if so, calls the victoria method to handle the game-winning condition.
+    
+    5. The mostrarSolucion method displays the solution by setting the text values and background colors of the TextViews based on the "arrayRandom" array.
+    6- The volverJuego method reverts the changes made by the mostrarSolucion method.
+    7. The actualizarSolucion method updates the "arrayRandom" array based on the current state of the clicked button.
+    8. The victoria method is called when the game is won. It creates an intent to start a new activity and passes relevant data such as the score and player name.
 
-The instrucciones method is called when a button is clicked. It toggles the state of the clicked button and its neighbors by calling the cambiarBombilla method. It then calls the mirarmatriz method to check if all the buttons have been turned off and if so, calls the popup method to display a message and reset the grid.
-
-The mirarmatriz method checks the state of the "matriu" array to see if all the buttons have been turned off. If so, it calls the popup method to display a message and reset the grid. It also increments the "count" variable and updates the "contador" TextView.
-
-The popup method displays a message using a Toast and increments the "count" variable. It then calls the create method to reset the grid.
-
-The cambiarBombilla method toggles the state of a button and changes its background image to either a lit or unlit light bulb, depending on the state. The state of the button is also updated in the "matriu" array.
-
-Finally, there is an activarBombilles method that returns a random Drawable object representing a lit or unlit light bulb. This method is used to initialize the state of each button when the grid is created.
+Overall, the code represents the implementation of the "LightsOut" game and provides methods to handle button clicks, game logic, and user interface updates.
   
   
   
   
-  ![cap4](https://user-images.githubusercontent.com/91748429/223406125-0dcbfa52-26c3-461e-853e-f627ec7d4f26.PNG)
+  
 
 
+![LO](https://github.com/bernatdiego01/2048-LightsOut/assets/91748429/551d7b3c-43e8-496f-a5ea-f69119f2df10)
 
 
 
